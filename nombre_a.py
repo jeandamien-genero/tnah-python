@@ -1,3 +1,5 @@
+#Exercice du cours de python du master TNAH de l'Ecole nationale des chartes, 2019
+
 distribution = {'1821': 1, '2006': 1, 'Depuis': 1, 'Enseignement': 1, 'Fondée': 1, 
 'L': 1, 'Recherche': 1, 'Technologies': 1, 'a': 1, 'appliquées': 1, 
 'aux': 1, 'chartes': 2, 'd': 1, 'dans': 1, 'de': 3, 'des': 2, 'du': 1, 
