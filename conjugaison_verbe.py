@@ -1,5 +1,5 @@
 def conjugate(verb, number):
-    """ Conjugation of french verbs from first and second groups and the verb to be.
+    """ Conjugation of french verbs from the first group.
         Training for École nationale des chartes' TNAH Master degree, by Jean-Damien Généro, 2019. Contributor : Anne Brunnet.
     :param verb: the verb to conjugate
     :param number: the grammatical person
