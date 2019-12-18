@@ -1,6 +1,6 @@
 def conjugate(verb, number):
     """ Conjugation of french verbs from the first group.
-        Training for École nationale des chartes' TNAH Master degree, by Jean-Damien Généro, 2019. Contributor : Anne Brunnet.
+        Training for École nationale des chartes' TNAH Master degree, by Jean-Damien Généro, 2019. Contributor : Anne Brunet.
     :param verb: the verb to conjugate
     :param number: the grammatical person
                 (1 = I, 2 = you (french "tu"), 3 = he/she/it, 4 = we, 5 = you (french "vous"), 6 = they)
