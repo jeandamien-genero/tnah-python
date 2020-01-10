@@ -23,6 +23,7 @@ with open("data/json/twitter.humanitesnumeriques.json") as json_file :
 
 
 #Exercice 2.
+#Nota : j'ai créé un fichier tabl_tweet.csv dans le dossier csv pour y mettre le tableau.
 with open("data/csv/tabl_tweet.csv", "w") as tabl_tweet :
     spamwritter = csv.writer(tabl_tweet, delimiter=",", quotechar='"')
     spamwritter.writerow(["Lien", "Auteur", "Date", "Tweet"])
