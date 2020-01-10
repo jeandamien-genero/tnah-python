@@ -20,6 +20,7 @@ with open("data/json/twitter.humanitesnumeriques.json") as json_file :
     time = username["created_at"]
     txt = first_tweet["text"]
     row1 = [link, user_id, time, txt]
+    print(row1)
 
 
 #Exercice 2.
