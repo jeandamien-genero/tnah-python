@@ -31,6 +31,13 @@ with open("data/csv/tabl_tweet.csv", "w") as tabl_tweet :
 #Exercice 3 : à partir du même fichier JSON, écrire un fichier CSV avec les colonnes Lien | Auteur | Date | Tweet et un tweet par ligne.
 
 def tweeter(index):
+    """ Function that write in a CSV file out of a json file which contain dictionaries and lists of 15 tweets 
+        about digital humanities.
+        Training for École nationale des chartes' TNAH Master degree, by Jean-Damien Généro, 2019.
+        :param index: the tweet's index in the statuses list.
+        :return: a list with the tweet's URL (link), username (user_id), date (time) and content (tweet).
+        :rtype: list of str.
+    """
     link = "http://twitter.com/statuses/" + (twitter_file["statuses"][index]["id_str"])
     user_id = twitter_file["statuses"][index]["user"]["screen_name"]
     time = twitter_file["statuses"][index]["user"]["created_at"]
