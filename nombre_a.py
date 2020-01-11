@@ -24,3 +24,13 @@ if nombre_de_a == 30:
     print('Bien joué!')
 else:
     print('La réponse est incorrecte, essaye encore!')
+
+#Solution 2 :
+for mot in distribution:
+    for lettre in mot:
+        if "a" == lettre:
+            nombre_de_a += distribution(mot)
+
+#Solution la plus simple :
+for mot, decompte in distribution.items():
+    nombre_de_a += mot.count("a") * decompte
