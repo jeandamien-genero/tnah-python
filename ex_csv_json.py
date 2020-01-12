@@ -4,39 +4,15 @@
 #Exercice 2 : À partir du code précédent, transformez l'exercice en chargeant le même fichier JSON et en écrivant un fichier CSV reprenant la structure en colonne : Lien | Auteur | Date | Tweet.
 
 
-#0. Packages
 import json
 import csv
 
 
-#Exercice 1.
-with open("data/json/twitter.humanitesnumeriques.json") as json_file :
-    twitter_file = json.load(json_file)
-    link = "http://twitter.com/statuses/" + (twitter_file["statuses"][0]["id_str"])
-    user_id = twitter_file["statuses"][0]["user"]["screen_name"]
-    time = twitter_file["statuses"][0]["user"]["created_at"]
-    tweet = twitter_file["statuses"][0]["text"]
-    print(link, user_id, time, tweet)
-
-
-#Exercice 2.
-#Nota : j'ai créé un fichier tabl_tweet.csv dans le dossier csv pour y mettre le tableau.
-row1 = [link, user_id, time, tweet]
-with open("data/csv/tabl_tweet.csv", "w") as tabl_tweet :
-    spamwritter = csv.writer(tabl_tweet, delimiter=",", quotechar='"')
-    spamwritter.writerow(["Lien", "Auteur", "Date", "Tweet"])
-    spamwritter.writerow(row1)
-
-
-#Exercice 3 : à partir du même fichier JSON, écrire un fichier CSV avec les colonnes Lien | Auteur | Date | Tweet et un tweet par ligne.
-
 def tweeter(index):
-    """ Function that write in a CSV file out of a json file which contain dictionaries and lists of 15 tweets 
-        about digital humanities.
-        Training for École nationale des chartes' TNAH Master degree, by Jean-Damien Généro, 2019.
-        :param index: the tweet's index in the statuses list.
-        :return: a list with the tweet's URL (link), username (user_id), date (time) and content (tweet).
-        :rtype: list of str.
+    """ Makes a list of a tweet's link, user_id, time and text out of a json file which contain metadata from Twitter.
+        :param index: the tweet's index in the statuses list
+        :return: a list with the tweet's URL (link), username (user_id), date (time) and content (tweet)
+        :rtype: str
     """
     link = "http://twitter.com/statuses/" + (twitter_file["statuses"][index]["id_str"])
     user_id = twitter_file["statuses"][index]["user"]["screen_name"]
@@ -44,17 +20,16 @@ def tweeter(index):
     tweet = twitter_file["statuses"][index]["text"]
     return([link, user_id, time, tweet])
 
-liste = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-
 with open("data/csv/tabl_tweet.csv", "w") as tabl_tweet:
     spamwritter = csv.writer(tabl_tweet, delimiter=",", quotechar='"')
     spamwritter.writerow(["Lien", "Auteur", "Date", "Tweet"])
 
 with open("data/json/twitter.humanitesnumeriques.json") as json_file :
     twitter_file = json.load(json_file)
-    for nombre in liste:
-        if nombre < len(liste):
-            row = tweeter(nombre)
-            with open("data/csv/tabl_tweet.csv", "a") as tabl_tweet :
-                spamwritter = csv.writer(tabl_tweet, delimiter=",", quotechar='"')
-                spamwritter.writerow(row)
+    nombre = 0
+    while (len(twitter_file["statuses"]) - 1) > nombre:
+        nombre += 1
+        row = tweeter(nombre)
+        with open("data/csv/tabl_tweet.csv", "a") as tabl_tweet :
+            spamwritter = csv.writer(tabl_tweet, delimiter=",", quotechar='"')
+            spamwritter.writerow(row)
