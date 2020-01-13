@@ -22,7 +22,7 @@ def tweeter(index):
 
 #Solution 1
 with open("data/csv/tabl_tweet.csv", "w") as tabl_tweet:
-    titlewritter = csv.writer(tabl_tweet, delimiter=",", quotechar='"')
+    titlewritter = csv.writer(tabl_tweet, delimiter=",")
     titlewritter.writerow(["Lien", "Auteur", "Date", "Tweet"]) #
     
 with open("data/json/twitter.humanitesnumeriques.json") as json_file :
@@ -38,7 +38,7 @@ with open("data/json/twitter.humanitesnumeriques.json") as json_file :
 
 #Solution 2
 with open("data/csv/tabl_tweet.csv", "w") as tabl_tweet:
-    spamwritter = csv.writer(tabl_tweet, delimiter=",", quotechar='"')
+    spamwritter = csv.writer(tabl_tweet, delimiter=",")
     spamwritter.writerow(["Lien", "Auteur", "Date", "Tweet"])
 
 with open("data/json/twitter.humanitesnumeriques.json") as json_file :
@@ -48,5 +48,5 @@ with open("data/json/twitter.humanitesnumeriques.json") as json_file :
         nombre += 1
         row = tweeter(nombre)
         with open("data/csv/tabl_tweet.csv", "a") as tabl_tweet :
-            spamwritter = csv.writer(tabl_tweet, delimiter=",", quotechar='"')
+            spamwritter = csv.writer(tabl_tweet, delimiter=",")
             spamwritter.writerow(row)
