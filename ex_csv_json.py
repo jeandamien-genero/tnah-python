@@ -16,10 +16,27 @@ def tweeter(index):
     """
     link = "http://twitter.com/statuses/" + (twitter_file["statuses"][index]["id_str"])
     user_id = twitter_file["statuses"][index]["user"]["screen_name"]
-    time = twitter_file["statuses"][index]["user"]["created_at"]
+    time = twitter_file["statuses"][index]["created_at"]
     tweet = twitter_file["statuses"][index]["text"]
     return([link, user_id, time, tweet])
 
+#Solution 1
+with open("data/csv/tabl_tweet.csv", "w") as tabl_tweet:
+    titlewritter = csv.writer(tabl_tweet, delimiter=",", quotechar='"')
+    titlewritter.writerow(["Lien", "Auteur", "Date", "Tweet"]) #
+    
+with open("data/json/twitter.humanitesnumeriques.json") as json_file :
+    twitter_file = json.load(json_file)
+    index = 0
+    for line in twitter_file["statuses"]:
+        row = tweeter(index)
+        index += 1
+        with open("data/csv/tabl_tweet.csv", "a") as tabl_tweet :
+            tweetwritter = csv.writer(tabl_tweet, delimiter=",")
+            tweetwritter.writerow(row)
+
+
+#Solution 2
 with open("data/csv/tabl_tweet.csv", "w") as tabl_tweet:
     spamwritter = csv.writer(tabl_tweet, delimiter=",", quotechar='"')
     spamwritter.writerow(["Lien", "Auteur", "Date", "Tweet"])
