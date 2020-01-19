@@ -31,8 +31,8 @@ def tweeter(index):
     tweet = twitter_file["statuses"][index]["text"]
     return [link, user_id, time, tweet]
 """
-Notes de correction. Problème de cette fonction : elle n'est pas utilisable avec tous les fichiers. Pour la rentrer universel, il faut ajouter le fichier dans les paramètres.
-Fonction corrigée :
+NB : this function can not be used with all the files but only with the current file of the exercice. 
+Correction to make it universal (you need to add a file "data" param) :
 def affichage_tweet(index, data):
     lien = "http://twitter.com/statuses/" + \
            data["statuses"][index]["id_str"]
