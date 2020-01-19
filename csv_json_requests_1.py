@@ -31,7 +31,7 @@ def iiif_csv(ark, csv_name):
 
     return None
 
-iiif_csv("ark:/12148/btv1b84259980", "/Users/jdgenero/Desktop/M2_Cours/cours-python-master/data/csv/pages.csv")
+iiif_csv("ark:/12148/btv1b84259980", "data/csv/pages.csv")
 
 #Proposition
 def iiif_csv(ark, nom_csv):
