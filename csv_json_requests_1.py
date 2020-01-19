@@ -7,7 +7,7 @@ def iiif_csv(ark, csv_name):
     :param ark: BnF's ark id
     :type ark: str
     :param csv_name: csv file where the table will be written
-    :type nom_csv: str
+    :type csv_name: str
     :return : none
     """
     columns = ["Number", "Page name", "Image link", "Width", "Height"]
